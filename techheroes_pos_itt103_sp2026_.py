@@ -38,10 +38,6 @@ products = {
     "BRE10": {"Product": "Breeze - Air Mist - Lavendar", "Price": 6097.65, "Quantity": 10}
     }
 
-def display_products (df):
-  print (df)
-  #might ditch this function
-
 #Define variables
 discount_rate = 0.05
 discount_limit = 5000
@@ -96,7 +92,7 @@ def add_to_cart(cart):
     if quantity > stock:
       print(f"Not enough stock available for {products[product_id]['Product']}. Available: {stock}. You requested: {quantity}")
 
-      #skip the steps the following steps
+      #skip the following steps
       continue
 
     #look for the name of the product in the same row and store in product name
@@ -125,7 +121,7 @@ def add_to_cart(cart):
     print(f"{product_name} added to cart (Quantity: {quantity})")
 
     #if the quantity in df for the product is less than 8
-    if df.at[row, 'Quantity'] < 8:
+    if df.at[row, 'Quantity'] < 5:
 
       #alert the user that stock is low
       print(f"Alert - Low stock: {product_name}. Remaining: {df.at[row, 'Quantity']}")
@@ -145,7 +141,7 @@ def add_to_cart(cart):
         #ask if they wish to proceed to check out
         ready = input("Are you ready to checkout? (yes/no): ").lower()
 
-        #if the entered input is yess
+        #if the entered input is yes
         if ready == "yes":
           #call the checkout function
           checkout(cart)
@@ -468,7 +464,7 @@ while True:
 
   #Best Buy Menu
   print("\n*************************BEST BUY MENU*************************")
-  display_products(df)
+  print (df)
   print("\n***************************************************************")
   print("1. Add to Cart   2. Remove from Cart")
   print("3. View Cart     4. Checkout")
