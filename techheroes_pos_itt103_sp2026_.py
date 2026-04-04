@@ -448,12 +448,12 @@ def generate_receipt(customer_name, cart, subtotal, discount, tax_amount, total,
     total = item['Price'] * item['Quantity']
     print(f"{item['Product']}")
     print(f"Quantity: {item['Quantity']} x ${item['Price']} = ${total:.2f}")
-    print("\n************************************")
+    print("\n**********************************************")
 
     print(f"Customer Name: {customer_name}")
     print(f"Subtotal: ${subtotal:.2f}")
     print(f"Discount: ${discount:.2f}")
-    print(f"Tax: ${sales_tax:.2f}")
+    print(f"Tax: ${tax_amount:.2f}")
     print(f"Total Due: ${total:.2f}")
     print(f"Payment: ${payment:.2f}")
     print(f"Change: ${change:.2f}")
